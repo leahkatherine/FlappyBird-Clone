@@ -8,10 +8,6 @@ export const useGame = () => {
   const [currentPoints, setCurrentPoints] = useState(0);
   const entities = entitites();
 
-  useEffect(() => {
-    setRunning(false);
-  }, []);
-
   const handleRuntime = () => {
     if (running) {
       gameEngine.stop();
