@@ -14,16 +14,23 @@ const Physics = (entities, {touches, time, dispatch}) => {
     .forEach(t => {
         Matter.Body.setVelocity(entities.Bird.body, {
             x: 0, 
-            y: -7
+            y: -10
         })
     })
 
     Matter.Engine.update(engine, time.delta)
 
     for (let index = 1; index <= 2; index++ ) {
+        
+        if(entities[`ObstacleTop${index}`].body.bounds.max.x <= 50 && !entities[`ObstacleTop${index}`].point){
+            entities[`ObstacleTop${index}`].point = true;
+            dispatch({type: 'new_point'})
+
+        }
 
         if(entities[`ObstacleTop${index}`].body.bounds.max.x <= 0 ){
             const pipeSizePos = getPipeSizePosPair(windowWidth * 0.9);
+            entities[`ObstacleTop${index}`].point = false;
 
             Matter.Body.setPosition(entities[`ObstacleTop${index}`].body, pipeSizePos.pipeTop.pos)
             Matter.Body.setPosition(entities[`ObstacleBottom${index}`].body, pipeSizePos.pipeBottom.pos)
