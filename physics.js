@@ -2,19 +2,17 @@ import Matter from "matter-js";
 import { getPipeSizePosPair } from "./utils/randomLogic";
 import { Dimensions } from 'react-native';
 
-
 const windowHeight = Dimensions.get('window').height
 const windowWidth = Dimensions.get('window').width
-
 
 const Physics = (entities, {touches, time, dispatch}) => {
     let engine = entities.physics.engine
 
     touches.filter(t => t.type === 'press')
     .forEach(t => {
-        Matter.Body.setVelocity(entities.Bird.body, {
+        Matter.Body.setVelocity(entities.Dragon.body, { 
             x: 0, 
-            y: -10
+            y: -6
         })
     })
 
@@ -22,7 +20,7 @@ const Physics = (entities, {touches, time, dispatch}) => {
 
     for (let index = 1; index <= 2; index++ ) {
         
-        if(entities[`ObstacleTop${index}`].body.bounds.max.x <= 50 && !entities[`ObstacleTop${index}`].point){
+        if(entities[`ObstacleTop${index}`].body.bounds.max.x <= 80 && !entities[`ObstacleTop${index}`].point){
             entities[`ObstacleTop${index}`].point = true;
             dispatch({type: 'new_point'})
 
