@@ -1,8 +1,8 @@
-import React from 'react';
-import { ImageBackground } from 'react-native';
-import Matter from 'matter-js';
+import React from "react";
+import { ImageBackground } from "react-native";
+import Matter from "matter-js";
 
-const Dragon = props => {
+const Dragon = (props) => {
   const widthBody = props.body.bounds.max.x - props.body.bounds.min.x;
   const heightBody = props.body.bounds.max.y - props.body.bounds.min.y;
 
@@ -11,9 +11,9 @@ const Dragon = props => {
 
   return (
     <ImageBackground
-      source={require('../assets/dragon.png')}
+      source={require("../assets/dragon.png")}
       style={{
-        position: 'absolute',
+        position: "absolute",
         left: xBody,
         top: yBody,
         width: widthBody,
@@ -29,7 +29,7 @@ export default (world, color, pos, size) => {
     pos.y,
     size.width,
     size.height,
-    { label: 'Dragon' } // Changed label from 'Bird' to 'Dragon'
+    { label: "Dragon" }
   );
   Matter.World.add(world, initialDragon);
 
@@ -37,6 +37,6 @@ export default (world, color, pos, size) => {
     body: initialDragon,
     color,
     pos,
-    renderer: <Dragon /> // Changed renderer from <Bird /> to <Dragon />
+    renderer: <Dragon />,
   };
 };
