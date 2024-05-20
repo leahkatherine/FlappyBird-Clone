@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "FlappyBird-Clone",
-    "slug": "FlappyBird-Clone",
+    "slug": "purpleflappybird",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/dragon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/dragon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.leahkanestos.purpleflappybird"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/dragon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.leahkanestos.purpleflappybird"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/dragon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "09568335-260c-4b9b-a017-e5c136d3156a"
+      }
+    },
+    "owner": "leahkanestos"
   }
 }
