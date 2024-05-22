@@ -15,14 +15,14 @@
     "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.leahkanestos.purpleflappybird"
+      "bundleIdentifier": "com.leahkanestos.purpleflappydragon"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/dragon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.leahkanestos.purpleflappybird"
+      "package": "com.leahkanestos.purpleflappydragon"
     },
     "web": {
       "favicon": "./assets/dragon.png"
