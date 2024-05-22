@@ -1,0 +1,8 @@
+  [build]
+  publish = "npx expo build:web"
+  command = "npx expo build:web"
+ 
+  [[redirects]]
+  from = "/*"
+  to = "dist/index.html"
+  status = 200
